@@ -1,0 +1,418 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+
+
+.center-container() {/*-------------------------- MIXING------------------------------ */
+	margin: 0 auto;
+}
+
+.button() {
+	font-size: 20px;
+	padding: 10px 60px;
+	cursor: pointer;
+	display: block;
+	border-radius: 10px;
+	background: @backgroundSkyBlue;
+	color: @colorwhite;
+
+		&:hover {
+		box-shadow: 0px 10px 23px #111; 
+		background: @colorwhite;
+		color: @backgroundSkyBlue;
+		}
+} 
+
+.flexing {
+	display: flex;
+} 
+
+.flexingColumn {
+	display: flex;
+	flex-direction: column;
+}
+
+/*-------------------------- MIXING------------------------------ */
+
+
+
+/*-------------------------- 2 VARIABLES------------------------------ */
+
+@backgroundSkyBlue: #42A5F5;
+@colorwhite: white;
+
+/*-------------------------- 2 VARIABLES------------------------------ */
+
+
+.container { /* CONTAINER PAGE */
+	width: 960px;
+	.center-container();
+	@media (max-width: 500px) {
+		width: 100%;
+	}
+
+header { /* HEADER CHILD 2*/
+	display: .flexing();
+	justify-content: space-between;
+	align-items: center;
+	background: @colorwhite;
+	width: 100%;
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+	z-index: 100;
+	box-shadow: 0px 10px 23px #111; 
+	.center-container();
+	@media (max-width: 500px) {
+		width: 100%;
+		.flexingColumn();
+		box-shadow: none;
+		position: static;
+	} // this closes the media query for the header section 
+		
+.myname { 
+		.button();
+		margin-left: 20px;
+		@media (max-width: 500px) {
+			margin: 0;
+		} //this closes media query for button with RIGO name
+	}
+}
+
+
+	/*NAVICATION BAR*/
+nav {
+	padding: 30px 0;
+	@media (max-width: 500px) {
+		.flexingColumn();
+		width: 100%;
+	} // this closes media query for nav bar
+
+		a {
+			color: @backgroundSkyBlue;
+			text-decoration: none;
+			font-size: 25px;
+			margin-left: 80px;
+			@media (max-width: 500px) {
+				width: 100%;
+				margin: 0;
+				Text-align: center;
+				padding: 20px 0;
+				box-shadow: 0px 15px 10px -15px #111; 
+				} // this closes media query for anchor tag
+			
+			&:last-child {
+				margin-right: 20px;
+				@media (max-width: 500px) {
+					margin: 0;
+				} // this closes media query for last anchor tag 
+			}
+
+			&:hover {
+			color: gray;
+			@media (max-width: 500px) {
+				background: @backgroundSkyBlue;
+				color: @colorwhite
+				} // this closes media query on hover effect
+			}	
+			
+		}
+} /*END OF NAVICATION BAR */
+
+
+  /* BACKGROUND IMAGE SECTION */
+
+.background-image { /* parent */
+	width: 960px;
+	height: 82vh;
+	background: url(/img/tunnel-view.jpg) no-repeat;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+    display: flex; 
+    justify-content: center;
+	align-items: center;
+	@media (max-width: 500px) {
+		width: 100%;	
+		height: 90vh;	
+	} //this closes media query for background image
+
+	
+
+.info-content {
+			content: "";
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.5);
+			.name-intro { 
+			font-size: 65px;
+			margin-top: 150px;
+			margin-left: 10px;
+			color: @colorwhite;
+			text-align: center;
+			line-height: 1.2em;
+		
+
+					.period { 
+						color: blue;
+						font-size: 120px;
+					}
+				
+			}
+		}
+	
+} 
+
+ /* FULLSTACK DEVELOPER */
+.fullstack-dev {
+	color: @colorwhite;
+	font-size: 21px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.resume {
+	.button();
+	margin-left: 370px;
+	@media (max-width: 500px) {
+		.center-container();
+		margin-top: 100px;
+	}
+}
+
+/* END OF BACKGROUND IMAGE SECTION */
+
+
+
+/* ABOUT ME SECTION AND SKILLS*/
+.about-me {
+	width: 100%;
+	border-bottom: 1px solid gray;
+	font-size: 3em;
+	padding: 30px 0;
+	text-align: center;
+}
+
+/* START OF BIOGRAPHY */
+.biography {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	border-bottom: 1px solid gray;
+	@media (max-width: 500px) {
+		.flexingColumn();	
+		padding: 30px 0;	
+	}
+	
+	.myinformation {
+		width: 50%;
+		display: flex;
+		align-items: center;
+		padding: 0 10px;
+		@media (max-width: 500px) {
+			width: 100%;
+			padding: 10px 1px;
+			font-size: 70%;
+		} // this closes media query on all divs
+	}
+}
+
+.storyofmylife1 {
+	font-size: 2em;
+	padding: 0 20px
+	width: 100%;
+	@media (max-width: 500px) {	
+	width: 100%;
+	}
+}
+
+.myphoto {
+	width: 100%;
+	@media (max-width: 500px) {
+	width: 30%;
+	}
+	
+.myphotonavy {
+		height: 550px;
+		width: 100%;
+		@media (max-width: 500px) {
+			width: 200%;
+			margin-left: 100px;
+		}
+	}
+}
+
+/*END OF ABOUT ME AND SKILLS SECTION */
+
+/*PORTFOLI SECTION */
+.portfolio {
+    width: 100%;
+    display: flex;
+    border-radius: 1px;
+    justify-content: center;
+    background: @backgroundSkyBlue;
+    align-items: center;
+	box-shadow: 0px 10px 23px #111; 
+    
+		h2 {
+		font-size: 3em;
+		padding: 90px 0;
+		@media (max-width: 500px) {
+			font-size: 2em;	
+		}
+	}
+}
+/* END OF PORTFOLIO SECTION */
+
+
+/* FOOTER CONTACT ME SECTION */
+footer {
+    width: 100%;
+    border-top: 1px solid black;
+    background: @colorwhite;
+    color: @backgroundSkyBlue;
+    margin-top: 100px;
+    padding: 40px 0;
+	box-shadow: 1px -15px 60px -19px #111;
+	
+    
+    .contact {
+    font-size: 2em;
+    text-align: center;
+	background: @colorwhite;
+	@media (max-width: 500px) {
+	font-size: 3em;
+	padding: 10px 0;		
+	}
+    }
+}
+
+		.email {
+			text-align: center;
+			font-size: 2em;
+			color: black;
+			@media (max-width: 500px) {
+				font-size: 1em;
+			}
+		}
+	
+} // end of container // 
+
+/* END OF FOOTER SECTION */
